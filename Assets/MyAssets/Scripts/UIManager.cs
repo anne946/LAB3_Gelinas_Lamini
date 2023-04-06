@@ -16,15 +16,27 @@ public class UIManager : MonoBehaviour
     {
         _gestionJeu = FindObjectOfType<GestionJeu>();
         _txtAccrochages.text = "Accrochages : " + _gestionJeu.GetPointage();
+        _enPause = false;  
         Time.timeScale = 1;
-        _enPause = false;
     }
-
 
     private void Update()
     {
-        float temps = Time.time - _gestionJeu.GetTempsDepart();
-        _txtTemps.text = "Temps : " + temps.ToString("f2");
+        KeyCode r = KeyCode.RightArrow;
+        KeyCode l = KeyCode.LeftArrow;
+        KeyCode up = KeyCode.UpArrow;
+        KeyCode d = KeyCode.DownArrow;
+
+        for(int i = 0; i<1;)
+        {
+            if (Input.GetKeyDown(r)||Input.GetKeyDown(l)||Input.GetKeyDown(up)||Input.GetKeyDown(d))
+            {
+                float temps = Time.time - _gestionJeu.GetTempsDepart();
+                _txtTemps.text = "Temps : " + temps.ToString("f2");
+            }
+        }
+       
+ 
         GestionPause();
     }
 

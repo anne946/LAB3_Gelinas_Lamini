@@ -8,6 +8,7 @@ public class GestionJeu : MonoBehaviour
     private int _pointage = 0;  
     private float _tempsFinal = 0;
     private float _tempsDepart = 0;
+    private float _temps = 0;
 
     private void Awake()
     {
@@ -35,7 +36,6 @@ public class GestionJeu : MonoBehaviour
         }
     }
 
- 
     public void AugmenterPointage()
     {
         _pointage++;
@@ -52,7 +52,6 @@ public class GestionJeu : MonoBehaviour
     {
         return _tempsDepart;
     }
-
 
     public void SetTempsFinal(float p_tempFinal)
     {

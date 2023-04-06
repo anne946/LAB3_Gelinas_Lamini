@@ -22,22 +22,32 @@ public class GestionCollisions : MonoBehaviour
         {
             if(!_touche)
             {
-                gameObject.GetComponent<MeshRenderer>().material.color = Color.black;
-                _gestionJeu.AugmenterPointage();
+                MeshRenderer[] objet = gameObject.GetComponentsInChildren<MeshRenderer>();
+                foreach (MeshRenderer corps in objet) 
+                {
+                    corps.material.color = Color.red;
+                }
+                _gestionJeu.AugmenterPointage();  
                 _touche = true;
                 _temps = Time.time + 4;
+                Debug.Log("TESS");
             }
         }  
     }
 
-    void FixedUpdated()
+    private void FixedUpdated()
     {
+        
         if(_touche)
         {
             if(_temps == Time.time)
             {
                 _touche = false;
-                gameObject.GetComponent<MeshRenderer>().material.color = Color.grey;
+                MeshRenderer[] objet = gameObject.GetComponentsInChildren<MeshRenderer>();
+                foreach (MeshRenderer corps in objet)
+                {
+                    corps.material.color = Color.black;         
+                }
             }
         }
     }

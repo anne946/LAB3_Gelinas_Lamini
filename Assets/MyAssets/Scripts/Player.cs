@@ -8,9 +8,6 @@ public class Player : MonoBehaviour
     [SerializeField] private float _vitesse = 20; 
     private Rigidbody _rb;
     private float rotationSpeed = 50f;
-    private float tempsDepart;
-    private float temps;
-
     
     // Méthode privées
     private void Start()
@@ -26,24 +23,6 @@ public class Player : MonoBehaviour
    
     private void MouvementsJoueur()
     {
-        //if (Input.GetAxis("Horizontal") || Input.GetAxis("Vertical"))
-        //{
-           //tempsDepart = Time.time;
-           //temps = Time.time - tempsDepart;
-           //Debug.Log("Temps: " + temps);
-        //}
-
-        KeyCode r = KeyCode.RightArrow;
-        KeyCode l = KeyCode.LeftArrow;
-        KeyCode up = KeyCode.UpArrow;
-        KeyCode d = KeyCode.DownArrow;
-
-        if (Input.GetKeyDown(r)||Input.GetKeyDown(l)||Input.GetKeyDown(up)||Input.GetKeyDown(d))
-        {
-             Debug.Log("Down Arrow key was pressed.");
-        }
-        
-
         float positionX = Input.GetAxis("Horizontal");
         float positionZ = Input.GetAxis("Vertical");
 
