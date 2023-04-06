@@ -33,6 +33,17 @@ public class Player : MonoBehaviour
            //Debug.Log("Temps: " + temps);
         //}
 
+        KeyCode r = KeyCode.RightArrow;
+        KeyCode l = KeyCode.LeftArrow;
+        KeyCode up = KeyCode.UpArrow;
+        KeyCode d = KeyCode.DownArrow;
+
+        if (Input.GetKeyDown(r)||Input.GetKeyDown(l)||Input.GetKeyDown(up)||Input.GetKeyDown(d))
+        {
+             Debug.Log("Down Arrow key was pressed.");
+        }
+        
+
         float positionX = Input.GetAxis("Horizontal");
         float positionZ = Input.GetAxis("Vertical");
 
